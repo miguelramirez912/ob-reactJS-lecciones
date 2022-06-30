@@ -16,7 +16,7 @@ class Greeting extends Component {
                 <h2>Tu edad es {this.state.age} años.</h2>
                 <button onClick={this.birthday}>Cumplir Años</button>
             </div>
-        );
+        )
     }
 
     birthday = () => {
@@ -30,6 +30,6 @@ class Greeting extends Component {
 
 Greeting.propTypes = {
     name: PropTypes.string,
-};
+}
 
 export default Greeting;
