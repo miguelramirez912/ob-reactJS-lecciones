@@ -8,6 +8,7 @@ import Ejemplo1 from './hooks/Ejemplo1';
 import MiComponenteConContexto from './hooks/Ejemplo3';
 import Ejemplo4 from './hooks/Ejemplo4';
 import GreetingStyled from './components/pure/greetingStyled';
+import Parent from './components/container/parent';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <h3>Contenido del props.children</h3>
         </Ejemplo4> */}
         {/* <GreetingStyled name="Miguel"/> */}
+        {/* <Parent/> */}
       {/* </header> */}
     </div>
   );

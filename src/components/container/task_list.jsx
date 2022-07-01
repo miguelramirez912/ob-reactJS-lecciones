@@ -13,6 +13,7 @@ const TaskListComponent = () => {
     
     const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
     const [loading, setLoading] = useState(true);
+
     //Control de ciclo de vida del componente
     useEffect(() => {
         console.log(('Modificacion de Tareas'));
@@ -22,9 +23,29 @@ const TaskListComponent = () => {
         }
     }, [tasks])
 
-    const changeCompleted = (id) => {
-        console.log('Cambiar el estado de una tarea')
+    function completeTask(task) {
+        console.log('Completa esta tarea', task);
+        const index = tasks.indexOf(task);
+        const tempTasks = [...tasks];
+        tempTasks[index].completed = !tempTasks[index].completed
+        setTasks(tempTasks)
     }
+
+    function deleteTask(task) {
+        console.log('Eliminar esta tarea', task);
+        const index = tasks.indexOf(task);
+        const tempTasks = [...tasks];
+        tempTasks.splice(index, 1)
+        setTasks(tempTasks)
+    }
+
+    function addTask(task) {
+        console.log('Agregar una tarea', task);
+        const tempTasks = [...tasks];
+        tempTasks.push(task);
+        setTasks(tempTasks)
+    }
+
     return (
         <div>
             <div className="col-12">
@@ -46,16 +67,19 @@ const TaskListComponent = () => {
                                 {/* iterar sobre una lista de tareas */}
                                 {tasks.map((task, index) => {
                                     return (
-                                        <TaskComponent key={index} task={task}/>
+                                        <TaskComponent key={index} 
+                                        task={task} 
+                                        complete={completeTask} 
+                                        remove={deleteTask}/>
                                     )
                                 })}
                             </tbody>
                         </table>
                     </div>
-                    <TaskForm/>
                 </div>
             </div>
             
+            <TaskForm add={addTask}/>
         </div>
     )
 }
