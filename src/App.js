@@ -9,6 +9,8 @@ import MiComponenteConContexto from './hooks/Ejemplo3';
 import Ejemplo4 from './hooks/Ejemplo4';
 import GreetingStyled from './components/pure/greetingStyled';
 import Parent from './components/container/parent';
+import LoginFormik from './components/pure/forms/loginFormik';
+import RegisterFormik from './components/pure/forms/registerFormik';
 
 
 function App() {
@@ -18,7 +20,6 @@ function App() {
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* <Greeting name="Pedro"/> */}
         {/* <Greetingf name="Miguel"/> */}
-        <TaskListComponent/>
         {/* <Ejemplo1/> */}
         {/* <MiComponenteConContexto/> */}
         {/* <Ejemplo4 nombre="Miguel">
@@ -26,6 +27,10 @@ function App() {
         </Ejemplo4> */}
         {/* <GreetingStyled name="Miguel"/> */}
         {/* <Parent/> */}
+        {/* <LoginFormik/> */}
+        <TaskListComponent/>
+        {/* <RegisterFormik/> */}
+
       {/* </header> */}
     </div>
   );
